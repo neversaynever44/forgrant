@@ -27,29 +27,17 @@ title: Index page
 				{
 					"cardName": "Etherum",
 					"cardTitle": "Price:",
-					"percentChange": "Percent change:",
-					"hourChange": "Hour change",
-					"dayChange": "Day change",
-					"weekChange": "Week change",
-					"monthChange": "Month change"
+					"switchName": "switch-1"
 				},
 				{
 					"cardName": "Litecoin",
 					"cardTitle": "Price:",
-					"percentChange": "Percent change:",
-					"hourChange": "Hour change",
-					"dayChange": "Day change",
-					"weekChange": "Week change",
-					"monthChange": "Month change"
+					"switchName": "switch-2"
 				},
 				{
 					"cardName": "Litecoin",
 					"cardTitle": "Price:",
-					"percentChange": "Percent change:",
-					"hourChange": "Hour change",
-					"dayChange": "Day change",
-					"weekChange": "Week change",
-					"monthChange": "Month change"
+					"switchName": "switch-3"
 				}
 				]%}
 				{% for cardItem in cardsList %}
@@ -71,18 +59,18 @@ title: Index page
 							</div>
 							<div class="card__row card__row-percent">
 								<div class="card__title card__title-wh">
-									{{cardItem.percentChange}}
+									Percent change:
 								</div>
 								<div class="card__toggle switch">	
-									<input type="checkbox" class="switch__field" id="switch"/>
-									<label for="switch" class="switch__label">
+									<input type="checkbox" class="switch__field" id="{{cardItem.switchName}}"/>
+									<label for="{{cardItem.switchName}}" class="switch__label">
 										<i class="switch__ico"></i>
 									</label>
 								</div>
 							</div>
 							<div class="card__row">
 								<div class="card__title">
-									{{cardItem.hourChange}}
+									Hour change
 								</div>
 								<div class="card__stat js-hour-change">
 
@@ -90,7 +78,7 @@ title: Index page
 							</div>
 							<div class="card__row">
 								<div class="card__title">
-									{{cardItem.dayChange}}
+									Day change
 								</div>
 								<div class="card__stat js-day-change">
 
@@ -98,7 +86,7 @@ title: Index page
 							</div>
 							<div class="card__row">
 								<div class="card__title">
-									{{cardItem.weekChange}}
+									Week change
 								</div>
 								<div class="card__stat js-week-change">
 
@@ -106,7 +94,7 @@ title: Index page
 							</div>
 							<div class="card__row">
 								<div class="card__title">
-									{{cardItem.monthChange}}
+									Month change
 								</div>
 								<div class="card__stat js-month-change">
 
