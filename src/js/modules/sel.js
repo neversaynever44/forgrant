@@ -14,6 +14,7 @@ $('#select').on("change", function() {
 });
 
 // select value from option's
+
 function selectVal() {
 	 new Promise((resolve, reject) => {
 		let xhr = new XMLHttpRequest;
@@ -33,21 +34,22 @@ function selectVal() {
 				day = currencyObj.changes.price.day,
 				week = currencyObj.changes.price.week,
 				month = currencyObj.changes.price.month;
-
+			// priceChange
 			priceChange[i].innerHTML = "$" + price;
-
+			// hourChange
 			hourChange[i].innerHTML	= "<span>+</span>" + hour + "$";
 			hourChangeFlag = hour < 0;
 			hourChange[i].classList.toggle(isRed, hourChangeFlag);
-
+			// dayChange
 			dayChange[i].innerHTML = "<span>+</span>" + day + "$";
 			dayChangeFlag = day < 0;
 			dayChange[i].classList.toggle(isRed, dayChangeFlag);
-
+			// weekChange
 			weekChange[i].innerHTML	= "<span>+</span>" + week + "$";
 			weekChangeFlag = week < 0;
 			weekChange[i].classList.toggle(isRed, weekChangeFlag);
-
+			console.log(weekChangeFlag)
+			// monthChange
 			monthChange[i].innerHTML = month + "$";
 			monthChangeFlag = month < 0;
 			monthChange[i].classList.toggle(isRed, monthChangeFlag);
@@ -64,11 +66,13 @@ let
 	dayChange = document.querySelectorAll(".js-day-change"),
 	weekChange = document.querySelectorAll(".js-week-change"),
 	monthChange = document.querySelectorAll(".js-month-change"),
-	hourChangeFlag = false,
-	dayChangeFlag = false,
-	weekChangeFlag = false,
-	monthChangeFlag = false,
+	hourChangeFlag = null,
+	dayChangeFlag = null,
+	weekChangeFlag = null,
+	monthChangeFlag = null,
 	currencyObj = {},
 	isRed = 'is-red';
+
+// selectVal
 selectVal();
 
