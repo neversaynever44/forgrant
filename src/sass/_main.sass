@@ -1,0 +1,53 @@
+// cards
+.cards
+	&__list
+		display: flex
+		justify-content: space-between
+		color: $white
+		flex-wrap: wrap
+	&__item
+		margin-top: 55px
+		flex-shrink: 0
+		flex-grow: 0
+		width: 31.33%
+		max-width: 31.33%
+		background-color: gray
+		border-radius: 10px
+		+cover
+		&:first-of-type
+			background-image: url(../img/card/et.jpg)
+		&:nth-of-type(2)
+			background-image: url(../img/card/lite.jpg)
+		&:last-of-type
+			background-image: url(../img/card/bitc.jpg)
+.card
+	padding: 20px 30px
+	&__row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 8px
+	&__title
+		color: $gray
+	&__price
+		font-size: 20px
+	&__stat
+		color: $green
+		font-size: 16px
+		+tr(color .3s ease)
+		&.is-red
+			color: $red
+			span
+				display: none
+	&__header
+		text-align: center
+		font-size: 22px
+	&__body
+		padding-top: 150px
+.card__row-percent
+	margin: 17px 0 13px 0
+.card__title-wh,
+.card__title-wh
+	color: $white
+.card__title-price
+	font-size: 20px

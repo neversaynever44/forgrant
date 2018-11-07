@@ -1,0 +1,129 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- BEGIN main -->
+<main class="main">
+	<!-- BEGIN inner -->
+	<div class="inner">
+		<!-- BEGIN select-l -->
+		<div class="select-l">
+			<div class="select-l__title">Select currency to exchange:</div>
+			<select name="" id="select">
+				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD">USD</option>
+				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR">EUR</option>
+				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCRUB">RUB</option>
+				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCGBP">GBP</option>
+			</select>
+		</div>
+		<!-- END select-l -->
+
+		<!-- BEGIN cards -->
+		<ul class="cards__list">
+
+			{% set cardsList = [
+				{
+					"cardName": "Etherum",
+					"cardTitle": "Price:",
+					"percentChange": "Percent change:",
+					"hourChange": "Hour change",
+					"dayChange": "Day change",
+					"weekChange": "Week change",
+					"monthChange": "Month change"
+				},
+				{
+					"cardName": "Litecoin",
+					"cardTitle": "Price:",
+					"percentChange": "Percent change:",
+					"hourChange": "Hour change",
+					"dayChange": "Day change",
+					"weekChange": "Week change",
+					"monthChange": "Month change"
+				},
+				{
+					"cardName": "Litecoin",
+					"cardTitle": "Price:",
+					"percentChange": "Percent change:",
+					"hourChange": "Hour change",
+					"dayChange": "Day change",
+					"weekChange": "Week change",
+					"monthChange": "Month change"
+				}
+				]%}
+				{% for cardItem in cardsList %}
+
+				<!-- BEGIN cards-item -->
+				<li class="cards__item">
+					<div class="card">
+						<div class="card__header">
+							{{cardItem.cardName}}
+						</div>
+						<div class="card__body">
+							<div class="card__row">
+								<div class="card__title card__title-wh card__title-price">
+									{{cardItem.cardTitle}}
+								</div>
+								<div class="card__price js-price-change">
+
+								</div>
+							</div>
+							<div class="card__row card__row-percent">
+								<div class="card__title card__title-wh">
+									{{cardItem.percentChange}}
+								</div>
+								<div class="card__toggle switch">	
+									<input type="checkbox" class="switch__field" id="switch"/>
+									<label for="switch" class="switch__label">
+										<i class="switch__ico"></i>
+									</label>
+								</div>
+							</div>
+							<div class="card__row">
+								<div class="card__title">
+									{{cardItem.hourChange}}
+								</div>
+								<div class="card__stat js-hour-change">
+
+								</div>
+							</div>
+							<div class="card__row">
+								<div class="card__title">
+									{{cardItem.dayChange}}
+								</div>
+								<div class="card__stat js-day-change">
+
+								</div>
+							</div>
+							<div class="card__row">
+								<div class="card__title">
+									{{cardItem.weekChange}}
+								</div>
+								<div class="card__stat js-week-change">
+
+								</div>
+							</div>
+							<div class="card__row">
+								<div class="card__title">
+									{{cardItem.monthChange}}
+								</div>
+								<div class="card__stat js-month-change">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- END cards-item -->
+				{% endfor %}
+
+			</ul>
+			<!-- END cards -->
+		</div>
+		<!-- END inner -->
+	</div>
+	<!-- END main -->
+
+	{% endblock %}

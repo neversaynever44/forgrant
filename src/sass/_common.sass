@@ -1,0 +1,68 @@
+body
+	background: url(../img/main.jpg) no-repeat #1b232b
+	font-size: 14px
+	font-weight: 700
+	font: 700 14px/1 "Roboto", sans-serif, Arial
+
+
+%inner
+	max-width: 1015px
+	padding: 70px 15px 144px 
+	width: 100%
+	margin: 0 auto
+.inner
+	@extend %inner
+
+.select-l
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: space-between
+	padding: 22px 24px
+	border-radius: 10px
+	background-color: hsla(0,0%,99%,.01)
+	border: 1px solid #2b3b45
+	&__title
+		font-size: 32px
+		color: $white
+		font-weight: 500
+		padding-left: (134 / 985) *100%
+		display: flex
+		flex: 1
+
+.switch
+	&__field
+		height: 0	
+		width: 0	
+		visibility: hidden
+		&:checked + label
+			background: gray
+		&:checked + label:after
+			left: 100%	
+			transform: translate(-100%, -50%)
+	&__label
+		cursor: pointer
+		text-indent: -9999px
+		width: 42px
+		box-shadow: inset 1px 3px 7px rgba(27, 36, 40, 0.56)
+		height: 16px
+		background: #3eb5f1
+		display: block
+		border-radius: 8px
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 0px
+			width: 20px
+			height: 20px
+			background: #fff
+			border-radius: 50%
+			transition: 0.3s
+		&:active
+			&:after
+				width: 30px	
+
+
