@@ -1,6 +1,9 @@
 import $ from 'jquery';
 
 import 'select2'
+import Promise from 'promise-polyfill';
+import Classlist from 'classlist-polyfill';
+
 // import 'jquery-nice-select'
 
 $(document).ready(function() {
@@ -38,20 +41,20 @@ function selectVal() {
 			priceChange[i].innerHTML = "$" + price;
 			// hourChange
 			hourChange[i].innerHTML	= "<span>+</span>" + hour + "$";
-			hourChangeFlag = hour < 0;
-			hourChange[i].classList.toggle(isRed, hourChangeFlag);
+			hourChangeBool = hour < 0;
+			hourChange[i].classList.toggle(isRed, hourChangeBool);
 			// dayChange
 			dayChange[i].innerHTML = "<span>+</span>" + day + "$";
-			dayChangeFlag = day < 0;
-			dayChange[i].classList.toggle(isRed, dayChangeFlag);
+			dayChangeBool = day < 0;
+			dayChange[i].classList.toggle(isRed, dayChangeBool);
 			// weekChange
 			weekChange[i].innerHTML	= "<span>+</span>" + week + "$";
-			weekChangeFlag = week < 0;
-			weekChange[i].classList.toggle(isRed, weekChangeFlag);
+			weekChangeBool = week < 0;
+			weekChange[i].classList.toggle(isRed, weekChangeBool);
 			// monthChange
 			monthChange[i].innerHTML = month + "$";
-			monthChangeFlag = month < 0;
-			monthChange[i].classList.toggle(isRed, monthChangeFlag);
+			monthChangeBool = month < 0;
+			monthChange[i].classList.toggle(isRed, monthChangeBool);
 
 		}
 	})
@@ -65,10 +68,10 @@ let
 	dayChange = document.querySelectorAll(".js-day-change"),
 	weekChange = document.querySelectorAll(".js-week-change"),
 	monthChange = document.querySelectorAll(".js-month-change"),
-	hourChangeFlag = null,
-	dayChangeFlag = null,
-	weekChangeFlag = null,
-	monthChangeFlag = null,
+	hourChangeBool = false,
+	dayChangeBool = false,
+	weekChangeBool = false,
+	monthChangeBool = false,
 	currencyObj = {},
 	isRed = 'is-red';
 
