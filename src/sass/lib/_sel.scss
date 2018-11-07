@@ -139,6 +139,7 @@
   transition: border-color .01s ease;
   border-radius: 5px;
 }
+
 .select2-container--open .select2-selection--single,  
 .select2-container--open .select2-dropdown,  {
   border-color: #92e8fe;
@@ -515,4 +516,10 @@
   width: 100%!important;
   max-width: 290px;
 
+}
+@media screen and (max-width: 480px) {
+  .select2-container--default .select2-selection--single,
+  .select2-container {
+    max-width: 240px;
+  }
 }

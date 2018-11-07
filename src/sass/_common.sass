@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700')
+
+
 body
 	background: url(../img/main.jpg) no-repeat #1b232b
 	font-size: 14px
@@ -10,6 +13,8 @@ body
 	padding: 70px 15px 144px 
 	width: 100%
 	margin: 0 auto
+	+xs
+		padding: 50px 15px
 .inner
 	@extend %inner
 
@@ -18,17 +23,27 @@ body
 	flex-wrap: wrap
 	align-items: center
 	justify-content: space-between
-	padding: 22px 24px
+	padding: 22px 17px
 	border-radius: 10px
 	background-color: hsla(0,0%,99%,.01)
 	border: 1px solid #2b3b45
+	+sm
+		flex-direction: column
 	&__title
 		font-size: 32px
 		color: $white
 		font-weight: 500
-		padding-left: (134 / 985) *100%
+		padding-left: (122 / 985) *100%
 		display: flex
 		flex: 1
+		+md
+			font-size: 24px
+			padding-left: 50px	
+		+sm
+			padding-left: 0	
+			margin-bottom: 20px	
+		+xs
+			font-size: 18px
 
 .switch
 	&__field
@@ -64,5 +79,3 @@ body
 		&:active
 			&:after
 				width: 30px	
-
-

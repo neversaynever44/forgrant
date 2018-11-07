@@ -48,7 +48,6 @@ function selectVal() {
 			weekChange[i].innerHTML	= "<span>+</span>" + week + "$";
 			weekChangeFlag = week < 0;
 			weekChange[i].classList.toggle(isRed, weekChangeFlag);
-			console.log(weekChangeFlag)
 			// monthChange
 			monthChange[i].innerHTML = month + "$";
 			monthChangeFlag = month < 0;
