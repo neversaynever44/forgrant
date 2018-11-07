@@ -12,7 +12,7 @@ title: Index page
 		<!-- BEGIN select-l -->
 		<div class="select-l">
 			<div class="select-l__title">Select currency to exchange:</div>
-			<select name="" id="select">
+			<select name="select" id="select">
 				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD">USD</option>
 				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR">EUR</option>
 				<option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCRUB">RUB</option>
@@ -23,7 +23,6 @@ title: Index page
 
 		<!-- BEGIN cards -->
 		<ul class="cards__list">
-
 			{% set cardsList = [
 				{
 					"cardName": "Etherum",
@@ -118,12 +117,10 @@ title: Index page
 				</li>
 				<!-- END cards-item -->
 				{% endfor %}
-
 			</ul>
 			<!-- END cards -->
 		</div>
 		<!-- END inner -->
-	</div>
+	</main>
 	<!-- END main -->
-
 	{% endblock %}
